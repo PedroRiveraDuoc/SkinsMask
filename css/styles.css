@@ -10,18 +10,24 @@ main {
 }
 
 .navbar {
-    background-color: #f8f9fa; /* Light background color for minimalistic style */
-    box-shadow: 0 4px 10px rgba(198, 94, 94, 0.452); /* Sombra bajo el navbar */
+    background-color: #f8f9fa;
+    /* Light background color for minimalistic style */
+    box-shadow: 0 4px 10px rgba(198, 94, 94, 0.452);
+    /* Sombra bajo el navbar */
 }
 
 .navbar-nav .nav-link {
-    color: #333; /* Dark color for text */
-    margin: 0 10px; /* Spacing between links */
-    font-weight: 500; /* Slightly bold text */
+    color: #333;
+    /* Dark color for text */
+    margin: 0 10px;
+    /* Spacing between links */
+    font-weight: 500;
+    /* Slightly bold text */
 }
 
 .navbar-nav .nav-link:hover {
-    color: #ff2847; /* Change color on hover to shiraz 500 */
+    color: #ff2847;
+    /* Change color on hover to shiraz 500 */
 }
 
 .navbar-brand img {
@@ -29,56 +35,84 @@ main {
 }
 
 .btn-link {
-    color: #ff2847; /* shiraz 500 */
+    color: #ff2847;
+    /* shiraz 500 */
 }
 
 .btn-primary {
     --bs-btn-color: #fff;
-    --bs-btn-bg: #ff2847; /* shiraz 500 */
-    --bs-btn-border-color: #ff2847; /* shiraz 500 */
+    --bs-btn-bg: #ff2847;
+    /* shiraz 500 */
+    --bs-btn-border-color: #ff2847;
+    /* shiraz 500 */
     --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #ff5f72; /* shiraz 400 */
-    --bs-btn-hover-border-color: #ff5f72; /* shiraz 400 */
-    --bs-btn-focus-shadow-rgb: 255, 40, 71; /* approximate focus color */
+    --bs-btn-hover-bg: #ff5f72;
+    /* shiraz 400 */
+    --bs-btn-hover-border-color: #ff5f72;
+    /* shiraz 400 */
+    --bs-btn-focus-shadow-rgb: 255, 40, 71;
+    /* approximate focus color */
     --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #fa0431; /* shiraz 600 */
-    --bs-btn-active-border-color: #fa0431; /* shiraz 600 */
+    --bs-btn-active-bg: #fa0431;
+    /* shiraz 600 */
+    --bs-btn-active-border-color: #fa0431;
+    /* shiraz 600 */
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
     --bs-btn-disabled-color: #fff;
-    --bs-btn-disabled-bg: #ff2847; /* shiraz 500 */
-    --bs-btn-disabled-border-color: #ff2847; /* shiraz 500 */
+    --bs-btn-disabled-bg: #ff2847;
+    /* shiraz 500 */
+    --bs-btn-disabled-border-color: #ff2847;
+    /* shiraz 500 */
 }
 
 .btn-outline-primary {
-    --bs-btn-color: #ff2847; /* shiraz 500 */
-    --bs-btn-border-color: #ff2847; /* shiraz 500 */
+    --bs-btn-color: #ff2847;
+    /* shiraz 500 */
+    --bs-btn-border-color: #ff2847;
+    /* shiraz 500 */
     --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #ff2847; /* shiraz 500 */
-    --bs-btn-hover-border-color: #ff2847; /* shiraz 500 */
-    --bs-btn-focus-shadow-rgb: 255, 40, 71; /* approximate focus color */
+    --bs-btn-hover-bg: #ff2847;
+    /* shiraz 500 */
+    --bs-btn-hover-border-color: #ff2847;
+    /* shiraz 500 */
+    --bs-btn-focus-shadow-rgb: 255, 40, 71;
+    /* approximate focus color */
     --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #fa0431; /* shiraz 600 */
-    --bs-btn-active-border-color: #fa0431; /* shiraz 600 */
+    --bs-btn-active-bg: #fa0431;
+    /* shiraz 600 */
+    --bs-btn-active-border-color: #fa0431;
+    /* shiraz 600 */
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #ff2847; /* shiraz 500 */
+    --bs-btn-disabled-color: #ff2847;
+    /* shiraz 500 */
     --bs-btn-disabled-bg: transparent;
-    --bs-btn-disabled-border-color: #ff2847; /* shiraz 500 */
+    --bs-btn-disabled-border-color: #ff2847;
+    /* shiraz 500 */
 }
 
 .btn-outline-info {
-    --bs-btn-color: #ff2847; /* shiraz 500 */
-    --bs-btn-border-color: #ff2847; /* shiraz 500 */
+    --bs-btn-color: #ff2847;
+    /* shiraz 500 */
+    --bs-btn-border-color: #ff2847;
+    /* shiraz 500 */
     --bs-btn-hover-color: #000;
-    --bs-btn-hover-bg: #ff2847; /* shiraz 500 */
-    --bs-btn-hover-border-color: #ff2847; /* shiraz 500 */
-    --bs-btn-focus-shadow-rgb: 255, 40, 71; /* approximate focus color */
+    --bs-btn-hover-bg: #ff2847;
+    /* shiraz 500 */
+    --bs-btn-hover-border-color: #ff2847;
+    /* shiraz 500 */
+    --bs-btn-focus-shadow-rgb: 255, 40, 71;
+    /* approximate focus color */
     --bs-btn-active-color: #000;
-    --bs-btn-active-bg: #fa0431; /* shiraz 600 */
-    --bs-btn-active-border-color: #fa0431; /* shiraz 600 */
+    --bs-btn-active-bg: #fa0431;
+    /* shiraz 600 */
+    --bs-btn-active-border-color: #fa0431;
+    /* shiraz 600 */
     --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-    --bs-btn-disabled-color: #ff2847; /* shiraz 500 */
+    --bs-btn-disabled-color: #ff2847;
+    /* shiraz 500 */
     --bs-btn-disabled-bg: transparent;
-    --bs-btn-disabled-border-color: #ff2847; /* shiraz 500 */
+    --bs-btn-disabled-border-color: #ff2847;
+    /* shiraz 500 */
 }
 
 footer {
@@ -87,17 +121,22 @@ footer {
 }
 
 .custom-size-carousel {
-    height: 100vh; /* Ajusta la altura del carrusel según tus necesidades */
+    height: 100vh;
+    /* Ajusta la altura del carrusel según tus necesidades */
 }
 
 .custom-size-carousel .carousel-inner {
-    height: 100%; /* Asegura que la altura del contenido interno coincida */
+    height: 100%;
+    /* Asegura que la altura del contenido interno coincida */
 }
 
 .custom-size-carousel .carousel-item img {
-    height: 100%; /* Asegura que las imágenes llenen la altura del carrusel */
-    object-fit: cover; /* Asegura que las imágenes se ajusten sin deformarse */
-    transform: translateY(-20%); /* Ajusta el valor para subir las imágenes */
+    height: 100%;
+    /* Asegura que las imágenes llenen la altura del carrusel */
+    object-fit: cover;
+    /* Asegura que las imágenes se ajusten sin deformarse */
+    transform: translateY(-20%);
+    /* Ajusta el valor para subir las imágenes */
 }
 
 .footer {
@@ -171,7 +210,15 @@ footer {
     line-height: 2.15;
     padding-left: .75em;
     padding-right: .75em;
-    }
-    .card-registration .select-arrow {
+}
+
+.card-registration .select-arrow {
     top: 13px;
-    }
+}
+
+
+.error-message {
+    color: red;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
