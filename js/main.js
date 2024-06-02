@@ -197,4 +197,45 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }
+
+    // Validación del formulario de inicio de sesión
+    const loginForm = document.getElementById('loginForm');
+    if (loginForm) {
+        loginForm.addEventListener("submit", function(event) {
+            clearErrors(loginForm);
+            const loginEmail = loginForm.querySelector("#loginEmail").value;
+            const loginPassword = loginForm.querySelector("#loginPassword").value;
+
+            let hasError = false;
+
+            if (isEmpty(loginEmail)) {
+                showError(loginForm.querySelector("#loginEmail"), "El correo electrónico no puede estar vacío.");
+                hasError = true;
+            } else if (!isValidEmail(loginEmail)) {
+                showError(loginForm.querySelector("#loginEmail"), "El formato del correo electrónico no es válido.");
+                hasError = true;
+            }
+
+            if (isEmpty(loginPassword)) {
+                showError(loginForm.querySelector("#loginPassword"), "La contraseña no puede estar vacía.");
+                hasError = true;
+            }
+
+            if (hasError) {
+                event.preventDefault();
+            } else {
+                const users = JSON.parse(localStorage.getItem('users')) || [];
+                const user = users.find(user => user.email === loginEmail && user.password === loginPassword);
+
+                if (user) {
+                    alert('Inicio de sesión exitoso');
+                    // Redirigir a la página principal u otra página si es necesario
+                    // window.location.href = "index.html";
+                } else {
+                    showError(loginForm.querySelector("#loginPassword"), "Correo electrónico o contraseña incorrectos.");
+                    event.preventDefault();
+                }
+            }
+        });
+    }
 });
