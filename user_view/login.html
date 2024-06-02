@@ -5,50 +5,44 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SkinsMask - Login</title>
+    <!-- Enlaces a las hojas de estilo -->
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 
 <body class="d-flex flex-column min-vh-100">
+    <!-- Inclusión del archivo de navegación -->
     <div data-include="../partials/nav.html"></div>
 
-    <!-- Main Content -->
-    <main class="flex-shrink-0">
-        <!-- Formulario de Login -->
-        <section class="h-100 bg-dark">
-            <div class="container py-5 h-100">
-                <div class="row d-flex justify-content-center align-items-center h-100">
-                    <div class="col">
-                        <div class="card card-registration my-4">
-                            <div class="row g-0">
-                                <div class="col-xl-6 d-none d-xl-block">
-                                    <img src="../img/foto2.jpg" class="img-fluid"
-                                        alt="Sample photo" class="img-fluid"
-                                        style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+    <!-- Contenido Principal -->
+    <main class="flex-shrink-0 d-flex align-items-center justify-content-center min-vh-100">
+        <!-- Sección del formulario de Login -->
+        <section class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card card-login">
+                        <div class="card-body p-md-5 text-black">
+                            <h3 class="mb-5 text-center"><strong>Iniciar sesión</strong></h3>
+                            <form id="loginForm">
+                                <div class="form-outline mb-4">
+                                    <input type="email" id="loginEmail" class="form-control form-control-lg" required />
+                                    <label class="form-label" for="loginEmail">Correo Electrónico</label>
                                 </div>
-                                <div class="col-xl-6">
-                                    <div class="card-body p-md-5 text-black">
-                                        <h3 class="mb-5"><strong>Iniciar sesión</strong></h3>
-                                        <form id="loginForm">
-                                            <div class="form-outline mb-4">
-                                                <input type="email" id="loginEmail" class="form-control form-control-lg" required />
-                                                <label class="form-label" for="loginEmail">Correo Electrónico</label>
-                                            </div>
 
-                                            <div class="form-outline mb-4">
-                                                <input type="password" id="loginPassword" class="form-control form-control-lg" required />
-                                                <label class="form-label" for="loginPassword">Contraseña</label>
-                                            </div>
-
-                                            <div class="d-flex justify-content-between pt-3">
-                                                <a href="forgot-password.html" class="text-muted">¿Olvidaste tu contraseña?</a>
-                                                <button type="submit" class="btn btn-primary btn-lg ms-2">Ingresar</button>
-                                            </div>
-                                        </form>
-                                    </div>
+                                <div class="form-outline mb-4">
+                                    <input type="password" id="loginPassword" class="form-control form-control-lg" required />
+                                    <label class="form-label" for="loginPassword">Contraseña</label>
                                 </div>
-                            </div>
+
+                                <div class="d-flex justify-content-between align-items-center mb-4">
+                                    <a href="forgot-password.html" class="text-muted">¿Olvidaste tu contraseña?</a>
+                                </div>
+
+                                <div class="d-grid gap-2">
+                                    <button type="submit" class="btn btn-primary btn-lg">Ingresar</button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -56,33 +50,14 @@
         </section>
     </main>
 
+    <!-- Inclusión del archivo de pie de página -->
     <div data-include="../partials/footer.html"></div>
 
-    <!-- Enlaces correctos a los archivos JavaScript -->
+    <!-- Enlaces a los archivos JavaScript -->
     <script src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/include.js"></script>
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            // Obtener valores del formulario de login
-            const loginEmail = document.getElementById('loginEmail').value;
-            const loginPassword = document.getElementById('loginPassword').value;
-
-            // Obtener los usuarios registrados de localStorage
-            const users = JSON.parse(localStorage.getItem('users')) || [];
-
-            // Verificar si el usuario está registrado
-            const user = users.find(user => user.email === loginEmail && user.password === loginPassword);
-
-            if (user) {
-                alert('Inicio de sesión exitoso');
-            } else {
-                alert('Correo electrónico o contraseña incorrectos');
-            }
-        });
-    </script>
+    <script src="../js/validations.js"></script>
 </body>
 
 </html>

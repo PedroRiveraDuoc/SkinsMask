@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,50 +9,48 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 </head>
+
 <body class="d-flex flex-column min-vh-100">
     <div data-include="../partials/nav.html"></div>
-    <main class="flex-shrink-0">
-        <section class="h-100 bg-dark">
-            <div class="container py-5 h-100">
-                <div class="row d-flex justify-content-center align-items-center h-100">
-                    <div class="col">
-                        <div class="card card-registration my-4">
-                            <div class="row g-0">
-                                <div class="col-xl-6 d-none d-xl-block">
-                                    <img src="../img/foto1.jpg" class="img-fluid"
-                                        alt="Sample photo"
-                                        style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
-                                </div>
-                                <div class="col-xl-6">
-                                    <div class="card-body p-md-5 text-black">
-                                        <h3 class="mb-5"><strong>Modificar Perfil</strong></h3>
-                                        <form id="profileEditForm">
-                                            <div class="form-outline mb-4">
-                                                <input type="text" id="firstName" class="form-control form-control-lg" required />
-                                                <label class="form-label" for="firstName">Nombre</label>
-                                            </div>
-                                            <div class="form-outline mb-4">
-                                                <input type="text" id="lastName" class="form-control form-control-lg" required />
-                                                <label class="form-label" for="lastName">Apellido</label>
-                                            </div>
-                                            <div class="form-outline mb-4">
-                                                <input type="email" id="email" class="form-control form-control-lg" required />
-                                                <label class="form-label" for="email">Correo Electrónico</label>
-                                            </div>
-                                            <div class="form-outline mb-4">
-                                                <input type="password" id="password" class="form-control form-control-lg" />
-                                                <label class="form-label" for="password">Nueva Contraseña (opcional)</label>
-                                            </div>
-                                            <div class="form-outline mb-4">
-                                                <input type="text" id="address" class="form-control form-control-lg" required />
-                                                <label class="form-label" for="address">Dirección</label>
-                                            </div>
-                                            <div class="d-flex justify-content-end pt-3">
-                                                <button type="reset" class="btn btn-light btn-lg">Limpiar</button>
-                                                <button type="submit" class="btn btn-primary btn-lg ms-2">Guardar Cambios</button>
-                                            </div>
-                                        </form>
-                                    </div>
+    <main class="flex-shrink-0 d-flex align-items-center justify-content-center min-vh-100">
+        <section class="container py-5" style="margin-top: 10vh;">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+                    <div class="card card-registration my-4">
+                        <div class="row g-0">
+                            <div class="col-xl-6 d-none d-xl-block">
+                                <img src="../img/foto1.jpg" class="img-fluid" alt="Sample photo"
+                                    style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                            </div>
+                            <div class="col-xl-6">
+                                <div class="card-body p-md-5 text-black">
+                                    <h3 class="mb-5"><strong>Modificar Perfil</strong></h3>
+                                    <form id="profileEditForm">
+                                        <div class="form-outline mb-4">
+                                            <input type="text" id="firstName" class="form-control form-control-lg" placeholder="Juan" required />
+                                            <label class="form-label" for="firstName">Nombre</label>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <input type="text" id="lastName" class="form-control form-control-lg" placeholder="Pérez" required />
+                                            <label class="form-label" for="lastName">Apellido</label>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <input type="email" id="email" class="form-control form-control-lg" placeholder="juan.perez@example.com" required />
+                                            <label class="form-label" for="email">Correo Electrónico</label>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <input type="password" id="password" class="form-control form-control-lg" placeholder="********" />
+                                            <label class="form-label" for="password">Nueva Contraseña (opcional)</label>
+                                        </div>
+                                        <div class="form-outline mb-4">
+                                            <input type="text" id="address" class="form-control form-control-lg" placeholder="Avenida Siempre Viva 123" required />
+                                            <label class="form-label" for="address">Dirección</label>
+                                        </div>
+                                        <div class="d-flex justify-content-end pt-3">
+                                            <button type="reset" class="btn btn-light btn-lg">Limpiar</button>
+                                            <button type="submit" class="btn btn-primary btn-lg ms-2">Guardar Cambios</button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -66,4 +65,5 @@
     <script src="../js/include.js"></script>
     <script src="../js/validations.js"></script>
 </body>
+
 </html>
