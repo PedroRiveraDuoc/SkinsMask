@@ -1,18 +1,15 @@
 document.addEventListener("DOMContentLoaded", function() {
     console.log("Document ready!");
 
-    // Función para validar campos vacíos
     function isEmpty(value) {
         return value.trim() === "";
     }
 
-    // Función para validar formato de correo electrónico
     function isValidEmail(email) {
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         return emailPattern.test(email);
     }
 
-    // Función para validar contraseñas
     function getPasswordError(password) {
         const minLength = 8;
         const maxLength = 20;
@@ -38,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function() {
         return "";
     }
 
-    // Función para mostrar mensajes de error
     function showError(element, message) {
         const errorElement = document.createElement("div");
         errorElement.className = "error-message";
@@ -47,13 +43,11 @@ document.addEventListener("DOMContentLoaded", function() {
         element.parentNode.appendChild(errorElement);
     }
 
-    // Función para limpiar mensajes de error
     function clearErrors(form) {
         const errorMessages = form.querySelectorAll(".error-message");
         errorMessages.forEach(message => message.remove());
     }
 
-    // Validación del formulario de registro
     const registerForm = document.getElementById('registerForm');
     if (registerForm) {
         registerForm.addEventListener("submit", function(event) {
@@ -101,7 +95,6 @@ document.addEventListener("DOMContentLoaded", function() {
             if (hasError) {
                 event.preventDefault();
             } else {
-                // Aquí puedes procesar el formulario, como guardar en localStorage
                 const user = {
                     firstName,
                     lastName,
@@ -114,91 +107,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 localStorage.setItem('users', JSON.stringify(users));
                 alert('Usuario registrado con éxito');
                 registerForm.reset();
+                window.location.href = "../user_view/login.html";  // Redirección a la página de inicio de sesión
             }
         });
     }
 
-    // Validación del formulario de recuperación de contraseña
-    const forgotPasswordForm = document.querySelector("#forgotPasswordForm");
-    if (forgotPasswordForm) {
-        forgotPasswordForm.addEventListener("submit", function(event) {
-            clearErrors(forgotPasswordForm);
-            const email = forgotPasswordForm.querySelector("#forgotPasswordEmail").value;
-
-            if (isEmpty(email)) {
-                event.preventDefault();
-                showError(forgotPasswordForm.querySelector("#forgotPasswordEmail"), "El correo electrónico no puede estar vacío.");
-            } else if (!isValidEmail(email)) {
-                event.preventDefault();
-                showError(forgotPasswordForm.querySelector("#forgotPasswordEmail"), "El formato del correo electrónico no es válido.");
-            }
-        });
-    }
-
-    // Validación del formulario de edición de perfil
-    const profileEditForm = document.querySelector("#profileEditForm");
-    if (profileEditForm) {
-        profileEditForm.addEventListener("submit", function(event) {
-            clearErrors(profileEditForm);
-            const firstName = profileEditForm.querySelector("#firstName").value;
-            const lastName = profileEditForm.querySelector("#lastName").value;
-            const email = profileEditForm.querySelector("#email").value;
-            const password = profileEditForm.querySelector("#password").value;
-            const address = profileEditForm.querySelector("#address").value;
-
-            let hasError = false;
-
-            if (isEmpty(firstName)) {
-                showError(profileEditForm.querySelector("#firstName"), "El nombre no puede estar vacío.");
-                hasError = true;
-            }
-
-            if (isEmpty(lastName)) {
-                showError(profileEditForm.querySelector("#lastName"), "El apellido no puede estar vacío.");
-                hasError = true;
-            }
-
-            if (isEmpty(email)) {
-                showError(profileEditForm.querySelector("#email"), "El correo electrónico no puede estar vacío.");
-                hasError = true;
-            } else if (!isValidEmail(email)) {
-                showError(profileEditForm.querySelector("#email"), "El formato del correo electrónico no es válido.");
-                hasError = true;
-            }
-
-            const passwordError = getPasswordError(password);
-            if (passwordError) {
-                showError(profileEditForm.querySelector("#password"), passwordError);
-                hasError = true;
-            }
-
-            if (isEmpty(address)) {
-                showError(profileEditForm.querySelector("#address"), "La dirección no puede estar vacía.");
-                hasError = true;
-            }
-
-            if (hasError) {
-                event.preventDefault();
-            } else {
-                // Aquí puedes procesar el formulario, como guardar en localStorage
-                const user = {
-                    firstName,
-                    lastName,
-                    email,
-                    password,
-                    address
-                };
-
-                const users = JSON.parse(localStorage.getItem('users')) || [];
-                users.push(user);
-                localStorage.setItem('users', JSON.stringify(users));
-                alert('Perfil actualizado con éxito');
-                profileEditForm.reset();
-            }
-        });
-    }
-
-    // Validación del formulario de inicio de sesión
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
         loginForm.addEventListener("submit", function(event) {
@@ -229,8 +142,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 if (user) {
                     alert('Inicio de sesión exitoso');
-                    // Redirigir a la página principal u otra página si es necesario
-                    // window.location.href = "index.html";
+                    window.location.href = "../index.html";  // Redirección a index.html
                 } else {
                     showError(loginForm.querySelector("#loginPassword"), "Correo electrónico o contraseña incorrectos.");
                     event.preventDefault();
