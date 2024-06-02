@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SkinsMask - Modificación de Perfil</title>
-    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <title>Modificar Perfil</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 </head>
-
 <body class="d-flex flex-column min-vh-100">
     <div data-include="../partials/nav.html"></div>
-
-    <!-- Main Content -->
     <main class="flex-shrink-0">
-        <!-- Formulario de Modificación de Perfil -->
         <section class="h-100 bg-dark">
             <div class="container py-5 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
@@ -23,69 +18,36 @@
                         <div class="card card-registration my-4">
                             <div class="row g-0">
                                 <div class="col-xl-6 d-none d-xl-block">
-                                    <img src="../img/foto3.jpg" class="img-fluid"
-                                        alt="Sample photo" class="img-fluid"
+                                    <img src="../img/foto1.jpg" class="img-fluid"
+                                        alt="Sample photo"
                                         style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
                                 </div>
                                 <div class="col-xl-6">
                                     <div class="card-body p-md-5 text-black">
-                                        <h3 class="mb-5"><strong>Modificación de Perfil</strong></h3>
+                                        <h3 class="mb-5"><strong>Modificar Perfil</strong></h3>
                                         <form id="profileEditForm">
-                                            <div class="row">
-                                                <div class="col-md-6 mb-4">
-                                                    <div data-mdb-input-init class="form-outline">
-                                                        <input type="text" id="firstName" class="form-control form-control-lg" required />
-                                                        <label class="form-label" for="firstName">Nombre</label>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 mb-4">
-                                                    <div data-mdb-input-init class="form-outline">
-                                                        <input type="text" id="lastName" class="form-control form-control-lg" required />
-                                                        <label class="form-label" for="lastName">Apellido</label>
-                                                    </div>
-                                                </div>
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="firstName" class="form-control form-control-lg" required />
+                                                <label class="form-label" for="firstName">Nombre</label>
                                             </div>
-
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="lastName" class="form-control form-control-lg" required />
+                                                <label class="form-label" for="lastName">Apellido</label>
+                                            </div>
                                             <div class="form-outline mb-4">
                                                 <input type="email" id="email" class="form-control form-control-lg" required />
                                                 <label class="form-label" for="email">Correo Electrónico</label>
                                             </div>
-
                                             <div class="form-outline mb-4">
-                                                <input type="password" id="password" class="form-control form-control-lg" required />
-                                                <label class="form-label" for="password">Contraseña</label>
+                                                <input type="password" id="password" class="form-control form-control-lg" />
+                                                <label class="form-label" for="password">Nueva Contraseña (opcional)</label>
                                             </div>
-
                                             <div class="form-outline mb-4">
                                                 <input type="text" id="address" class="form-control form-control-lg" required />
                                                 <label class="form-label" for="address">Dirección</label>
                                             </div>
-
-                                            <div class="row">
-                                                <div class="col-md-6 mb-4">
-                                                    <select class="form-select form-select-lg" id="state" required>
-                                                        <option value="">Región</option>
-                                                        <option value="1">Option 1</option>
-                                                        <option value="2">Option 2</option>
-                                                        <option value="3">Option 3</option>
-                                                    </select>
-                                                </div>
-                                                <div class="col-md-6 mb-4">
-                                                    <select class="form-select form-select-lg" id="city" required>
-                                                        <option value="">Comuna</option>
-                                                        <option value="1">Option 1</option>
-                                                        <option value="2">Option 2</option>
-                                                        <option value="3">Option 3</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="form-outline mb-4">
-                                                <input type="text" id="pincode" class="form-control form-control-lg" required />
-                                                <label class="form-label" for="pincode">Código Postal</label>
-                                            </div>
-
                                             <div class="d-flex justify-content-end pt-3">
+                                                <button type="reset" class="btn btn-light btn-lg">Limpiar</button>
                                                 <button type="submit" class="btn btn-primary btn-lg ms-2">Guardar Cambios</button>
                                             </div>
                                         </form>
@@ -98,53 +60,10 @@
             </div>
         </section>
     </main>
-
     <div data-include="../partials/footer.html"></div>
-
-    <!-- Enlaces correctos a los archivos JavaScript -->
     <script src="../js/jquery.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/include.js"></script>
-    <script>
-        document.getElementById('profileEditForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            // Obtener valores del formulario
-            const firstName = document.getElementById('firstName').value;
-            const lastName = document.getElementById('lastName').value;
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-            const address = document.getElementById('address').value;
-            const state = document.getElementById('state').value;
-            const city = document.getElementById('city').value;
-            const pincode = document.getElementById('pincode').value;
-
-            // Obtener el usuario actual de localStorage
-            const users = JSON.parse(localStorage.getItem('users')) || [];
-            const currentUserEmail = localStorage.getItem('currentUserEmail');
-            const currentUser = users.find(user => user.email === currentUserEmail);
-
-            if (currentUser) {
-                // Actualizar la información del usuario
-                currentUser.firstName = firstName;
-                currentUser.lastName = lastName;
-                currentUser.email = email;
-                currentUser.password = password;
-                currentUser.address = address;
-                currentUser.state = state;
-                currentUser.city = city;
-                currentUser.pincode = pincode;
-
-                // Guardar el array de usuarios actualizado en localStorage
-                localStorage.setItem('users', JSON.stringify(users));
-
-                // Mostrar un mensaje de éxito
-                alert('Perfil actualizado con éxito');
-            } else {
-                alert('No se encontró el usuario');
-            }
-        });
-    </script>
+    <script src="../js/validations.js"></script>
 </body>
-
 </html>
