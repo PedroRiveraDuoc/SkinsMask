@@ -1,0 +1,177 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+.navbar {
+    background-color: #f8f9fa; /* Light background color for minimalistic style */
+    box-shadow: 0 4px 10px rgba(198, 94, 94, 0.452); /* Sombra bajo el navbar */
+}
+
+.navbar-nav .nav-link {
+    color: #333; /* Dark color for text */
+    margin: 0 10px; /* Spacing between links */
+    font-weight: 500; /* Slightly bold text */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ff2847; /* Change color on hover to shiraz 500 */
+}
+
+.navbar-brand img {
+    height: 70px;
+}
+
+.btn-link {
+    color: #ff2847; /* shiraz 500 */
+}
+
+.btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #ff2847; /* shiraz 500 */
+    --bs-btn-border-color: #ff2847; /* shiraz 500 */
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #ff5f72; /* shiraz 400 */
+    --bs-btn-hover-border-color: #ff5f72; /* shiraz 400 */
+    --bs-btn-focus-shadow-rgb: 255, 40, 71; /* approximate focus color */
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #fa0431; /* shiraz 600 */
+    --bs-btn-active-border-color: #fa0431; /* shiraz 600 */
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #fff;
+    --bs-btn-disabled-bg: #ff2847; /* shiraz 500 */
+    --bs-btn-disabled-border-color: #ff2847; /* shiraz 500 */
+}
+
+.btn-outline-primary {
+    --bs-btn-color: #ff2847; /* shiraz 500 */
+    --bs-btn-border-color: #ff2847; /* shiraz 500 */
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #ff2847; /* shiraz 500 */
+    --bs-btn-hover-border-color: #ff2847; /* shiraz 500 */
+    --bs-btn-focus-shadow-rgb: 255, 40, 71; /* approximate focus color */
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #fa0431; /* shiraz 600 */
+    --bs-btn-active-border-color: #fa0431; /* shiraz 600 */
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #ff2847; /* shiraz 500 */
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #ff2847; /* shiraz 500 */
+}
+
+.btn-outline-info {
+    --bs-btn-color: #ff2847; /* shiraz 500 */
+    --bs-btn-border-color: #ff2847; /* shiraz 500 */
+    --bs-btn-hover-color: #000;
+    --bs-btn-hover-bg: #ff2847; /* shiraz 500 */
+    --bs-btn-hover-border-color: #ff2847; /* shiraz 500 */
+    --bs-btn-focus-shadow-rgb: 255, 40, 71; /* approximate focus color */
+    --bs-btn-active-color: #000;
+    --bs-btn-active-bg: #fa0431; /* shiraz 600 */
+    --bs-btn-active-border-color: #fa0431; /* shiraz 600 */
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #ff2847; /* shiraz 500 */
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #ff2847; /* shiraz 500 */
+}
+
+footer {
+    background-color: #f8f9fa;
+    color: #6c757d;
+}
+
+.custom-size-carousel {
+    height: 100vh; /* Ajusta la altura del carrusel según tus necesidades */
+}
+
+.custom-size-carousel .carousel-inner {
+    height: 100%; /* Asegura que la altura del contenido interno coincida */
+}
+
+.custom-size-carousel .carousel-item img {
+    height: 100%; /* Asegura que las imágenes llenen la altura del carrusel */
+    object-fit: cover; /* Asegura que las imágenes se ajusten sin deformarse */
+    transform: translateY(-20%); /* Ajusta el valor para subir las imágenes */
+}
+
+.footer {
+    background-color: #ffffff;
+    padding: 20px 0;
+}
+
+.footer h5 {
+    font-size: 16px;
+    color: #343a40;
+}
+
+.footer ul {
+    padding-left: 0;
+    list-style: none;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    color: #6c757d;
+    text-decoration: none;
+}
+
+.footer ul li a:hover {
+    color: #0056b3;
+}
+
+.footer .input-group {
+    max-width: 400px;
+}
+
+.footer .input-group .form-control {
+    border-radius: 0;
+}
+
+.footer .input-group .btn {
+    border-radius: 0;
+}
+
+.footer p {
+    margin-bottom: 0;
+    color: #7d6c6c;
+}
+
+.footer .list-unstyled {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footer .list-unstyled li {
+    margin-left: 15px;
+}
+
+.footer .list-unstyled li a {
+    color: #343a40;
+    text-decoration: none;
+}
+
+.footer .list-unstyled li a:hover {
+    color: #0056b3;
+}
+
+
+
+
+.card-registration .select-input.form-control[readonly]:not([disabled]) {
+    font-size: 1rem;
+    line-height: 2.15;
+    padding-left: .75em;
+    padding-right: .75em;
+    }
+    .card-registration .select-arrow {
+    top: 13px;
+    }

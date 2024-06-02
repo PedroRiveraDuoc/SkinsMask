@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkinsMask - Registro</title>
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <div data-include="../partials/nav.html"></div>
+
+    <!-- Main Content -->
+    <main class="flex-shrink-0">
+        <!-- Formulario de Registro -->
+        <section class="h-100 bg-dark">
+            <div class="container py-5 h-100">
+                <div class="row d-flex justify-content-center align-items-center h-100">
+                    <div class="col">
+                        <div class="card card-registration my-4">
+                            <div class="row g-0">
+                                <div class="col-xl-6 d-none d-xl-block">
+                                    <img src="../img/foto1.jpg" class="img-fluid"
+                                        alt="Sample photo" class="img-fluid"
+                                        style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+                                </div>
+                                <div class="col-xl-6">
+                                    <div class="card-body p-md-5 text-black">
+                                        <h3 class="mb-5"><strong>Registro de usuario</strong></h3>
+                                        <form id="registerForm">
+                                            <div class="row">
+                                                <div class="col-md-6 mb-4">
+                                                    <div data-mdb-input-init class="form-outline">
+                                                        <input type="text" id="firstName"
+                                                            class="form-control form-control-lg" required />
+                                                        <label class="form-label" for="firstName">Nombre</label>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-4">
+                                                    <div data-mdb-input-init class="form-outline">
+                                                        <input type="text" id="lastName"
+                                                            class="form-control form-control-lg" required />
+                                                        <label class="form-label" for="lastName">Apellido</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="d-md-flex justify-content-start align-items-center mb-4 py-2">
+                                                <h6 class="mb-0 me-4">Sexo: </h6>
+                                                <div class="form-check form-check-inline mb-0 me-4">
+                                                    <input class="form-check-input" type="radio" name="gender"
+                                                        id="femaleGender" value="female" required />
+                                                    <label class="form-check-label" for="femaleGender">Femenino</label>
+                                                </div>
+                                                <div class="form-check form-check-inline mb-0 me-4">
+                                                    <input class="form-check-input" type="radio" name="gender"
+                                                        id="maleGender" value="male" required />
+                                                    <label class="form-check-label" for="maleGender">Masculino</label>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="address" class="form-control form-control-lg" required />
+                                                <label class="form-label" for="address">Dirección</label>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-md-6 mb-4">
+                                                    <select class="form-select form-select-lg" id="state" required>
+                                                        <option value="">Región</option>
+                                                        <option value="1">Option 1</option>
+                                                        <option value="2">Option 2</option>
+                                                        <option value="3">Option 3</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-md-6 mb-4">
+                                                    <select class="form-select form-select-lg" id="city" required>
+                                                        <option value="">Comuna</option>
+                                                        <option value="1">Option 1</option>
+                                                        <option value="2">Option 2</option>
+                                                        <option value="3">Option 3</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                            <div class="form-outline mb-4">
+                                                <input type="text" id="pincode" class="form-control form-control-lg" required />
+                                                <label class="form-label" for="pincode">Código Postal</label>
+                                            </div>
+
+                                            <div class="form-outline mb-4">
+                                                <input type="email" id="email" class="form-control form-control-lg" required />
+                                                <label class="form-label" for="email">Correo Electrónico</label>
+                                            </div>
+
+                                            <div class="form-outline mb-4">
+                                                <input type="password" id="password" class="form-control form-control-lg" required />
+                                                <label class="form-label" for="password">Contraseña</label>
+                                            </div>
+
+                                            <div class="d-flex justify-content-end pt-3">
+                                                <button type="reset" class="btn btn-light btn-lg">Limpiar</button>
+                                                <button type="submit" class="btn btn-primary btn-lg ms-2">Guardar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div data-include="../partials/footer.html"></div>
+
+    <!-- Enlaces correctos a los archivos JavaScript -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/include.js"></script>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Obtener valores del formulario
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const gender = document.querySelector('input[name="gender"]:checked').value;
+            const address = document.getElementById('address').value;
+            const state = document.getElementById('state').value;
+            const city = document.getElementById('city').value;
+            const pincode = document.getElementById('pincode').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Crear el objeto de usuario
+            const user = {
+                firstName,
+                lastName,
+                gender,
+                address,
+                state,
+                city,
+                pincode,
+                email,
+                password
+            };
+
+            // Obtener los usuarios existentes de localStorage
+            const users = JSON.parse(localStorage.getItem('users')) || [];
+
+            // Agregar el nuevo usuario al array
+            users.push(user);
+
+            // Guardar el array de usuarios actualizado en localStorage
+            localStorage.setItem('users', JSON.stringify(users));
+
+            // Mostrar un mensaje de éxito y limpiar el formulario
+            alert('Usuario registrado con éxito');
+            document.getElementById('registerForm').reset();
+
+            // Mostrar los usuarios registrados en la consola
+            console.log('Usuarios registrados:', users);
+        });
+    </script>
+</body>
+
+</html>
