@@ -232,3 +232,15 @@ footer {
 input:focus::placeholder {
     color: transparent; /* Hace que el placeholder sea transparente al enfocar el campo */
 }
+
+
+.btn-white {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+}
+
+.btn-white:hover {
+    background-color: #f8f9fa;
+    color: #000000;
+}
