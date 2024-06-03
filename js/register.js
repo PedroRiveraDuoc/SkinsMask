@@ -1,25 +1,20 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Mensaje en la consola para indicar que el script de registro se ha cargado
     console.log("Register script loaded!");
 
-    // Obtiene el formulario de registro por su ID
     const registerForm = document.getElementById('registerForm');
     if (registerForm) {
-        // Agrega un evento de submit al formulario de registro
         registerForm.addEventListener("submit", function(event) {
-            // Limpia cualquier mensaje de error previo
-            clearErrors(registerForm);
+            event.preventDefault();  // Evita el envío del formulario por defecto
 
-            // Obtiene los valores de los campos del formulario
+            clearErrors(registerForm);
             const firstName = registerForm.querySelector("#firstName").value;
             const lastName = registerForm.querySelector("#lastName").value;
             const email = registerForm.querySelector("#email").value;
             const password = registerForm.querySelector("#password").value;
             const confirmPassword = registerForm.querySelector("#confirmPassword").value;
 
-            let hasError = false; // Variable para rastrear si hay errores
+            let hasError = false;
 
-            // Validaciones de los campos del formulario
             if (isEmpty(firstName)) {
                 showError(registerForm.querySelector("#firstName"), "El nombre no puede estar vacío.");
                 hasError = true;
@@ -52,11 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 hasError = true;
             }
 
-            // Si hay algún error, previene el envío del formulario
-            if (hasError) {
-                event.preventDefault();
-            } else {
-                // Crea un objeto usuario con los valores del formulario
+            if (!hasError) {
                 const user = {
                     firstName,
                     lastName,
@@ -64,18 +55,13 @@ document.addEventListener("DOMContentLoaded", function() {
                     password
                 };
 
-                // Obtiene la lista de usuarios del almacenamiento local, o crea una lista vacía si no existe
                 const users = JSON.parse(localStorage.getItem('users')) || [];
-                // Añade el nuevo usuario a la lista
                 users.push(user);
-                // Guarda la lista de usuarios actualizada en el almacenamiento local
                 localStorage.setItem('users', JSON.stringify(users));
-                // Muestra una alerta de éxito
                 alert('Usuario registrado con éxito');
-                // Resetea el formulario
                 registerForm.reset();
-                // Redirige a la página de inicio de sesión
-                window.location.href = "../user_view/login.html";
+                console.log("Redireccionando al login...");
+                window.location.href = "../user_view/login.html";  // Redirección a la página de inicio de sesión
             }
         });
     }
