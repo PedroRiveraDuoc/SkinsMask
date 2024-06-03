@@ -31,11 +31,11 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav nav-underline">
                 <!-- Enlace para iniciar sesión -->
-                <li class="nav-item" style="padding-top: 7px;">
+                <li class="nav-item" id="navLogin" style="padding-top: 7px;">
                     <a class="nav-link" href="../user_view/login.html">Ingresar</a>
                 </li>
                 <!-- Botón para registrarse -->
-                <li class="nav-item" style="padding-top: 7px;">
+                <li class="nav-item" id="navRegister" style="padding-top: 7px;">
                     <a class="btn btn-primary me-3" href="../user_view/register.html">Registrate</a>
                 </li>
                 <!-- Enlace al carrito de compras -->
@@ -55,7 +55,24 @@
                 <li class="nav-item" style="padding-top: 7px;">
                     <a class="nav-link" href="../user_view/profile-edit.html">Modificar Perfil</a>
                 </li>
+                <!-- Nombre del usuario logeado -->
+                <li class="nav-item d-none" id="navUser" style="padding-top: 7px;">
+                    <a class="nav-link" href="#" id="navUsername"></a>
+                </li>
             </ul>
         </div>
     </div>
 </nav>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+        if (loggedInUser) {
+            document.getElementById('navLogin').classList.add('d-none');
+            document.getElementById('navRegister').classList.add('d-none');
+            const navUser = document.getElementById('navUser');
+            navUser.classList.remove('d-none');
+            document.getElementById('navUsername').textContent = loggedInUser.firstName;
+        }
+    });
+</script>

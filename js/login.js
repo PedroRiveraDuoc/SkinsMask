@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (user) {
                     alert('Inicio de sesión exitoso');
                     console.log("Redireccionando al index...");
+                    localStorage.setItem('loggedInUser', JSON.stringify(user)); // Guardar el usuario logeado en localStorage
                     window.location.href = "../index.html";  // Redirección a la página de inicio (index.html) en el directorio principal
                 } else {
                     showError(loginForm.querySelector("#loginPassword"), "Correo electrónico o contraseña incorrectos.");
