@@ -1,30 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SkinsMask</title>
+    <!-- Enlace a los archivos CSS -->
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 
 <body class="d-flex flex-column min-vh-100">
+    <!-- Inclusión de la barra de navegación -->
     <div data-include="partials/nav.html"></div>
     
-    <!-- Main Content -->
+    <!-- Contenido principal -->
     <main class="flex-shrink-0">
+        <!-- Carrusel de imágenes -->
         <div id="carouselExampleFade" class="carousel slide carousel-fade custom-size-carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="img/carousel/carousel7.jpg" class="d-block w-100" alt="...">
+                    <img src="img/carousel/carousel7.jpg" class="d-block w-100" alt="Imagen 1">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/carousel/carousel1.jpg" class="d-block w-100" alt="...">
+                    <img src="img/carousel/carousel1.jpg" class="d-block w-100" alt="Imagen 2">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/carousel/carousel2.jpg" class="d-block w-100" alt="...">
+                    <img src="img/carousel/carousel2.jpg" class="d-block w-100" alt="Imagen 3">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -37,23 +40,28 @@
             </button>
         </div>
 
+        <!-- Sección de bienvenida -->
         <div class="container mt-5">
             <div class="row">
                 <div class="col">
-                    <h1>Hola amigoz bienvenidos a mi tienda</h1>
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                    <p>asdrasdasdsadsadads</p>
+                    <h1>Bienvenidos a SkinsMask</h1>
+                    <p>Descubre las mejores máscaras tradicionales japonesas.</p>
                 </div>
             </div>
         </div>
     </main>
     
-    <div data-include="../partials/footer.html"></div>
+    <!-- Inclusión del pie de página -->
+    <div data-include="partials/footer.html"></div>
 
+    <!-- Enlace a los archivos JavaScript -->
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/include.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/profile-edit.js"></script>
 </body>
 
 </html>

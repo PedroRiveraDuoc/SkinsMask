@@ -5,47 +5,60 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modificar Perfil</title>
+    <!-- Enlaces a las hojas de estilo -->
     <link rel="stylesheet" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" href="../css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 
 <body class="d-flex flex-column min-vh-100">
+    <!-- Inclusión del archivo de navegación -->
     <div data-include="../partials/nav.html"></div>
+
+    <!-- Contenido Principal -->
     <main class="flex-shrink-0 d-flex align-items-center justify-content-center min-vh-100">
+        <!-- Sección para modificar el perfil -->
         <section class="container py-5" style="margin-top: 10vh;">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col">
                     <div class="card card-registration my-4">
                         <div class="row g-0">
+                            <!-- Imagen de la sección -->
                             <div class="col-xl-6 d-none d-xl-block">
                                 <img src="../img/foto1.jpg" class="img-fluid" alt="Sample photo"
                                     style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
                             </div>
+                            <!-- Formulario de modificación de perfil -->
                             <div class="col-xl-6">
                                 <div class="card-body p-md-5 text-black">
                                     <h3 class="mb-5"><strong>Modificar Perfil</strong></h3>
                                     <form id="profileEditForm">
+                                        <!-- Campo para el nombre -->
                                         <div class="form-outline mb-4">
                                             <input type="text" id="firstName" class="form-control form-control-lg" placeholder="Juan" required />
                                             <label class="form-label" for="firstName">Nombre</label>
                                         </div>
+                                        <!-- Campo para el apellido -->
                                         <div class="form-outline mb-4">
                                             <input type="text" id="lastName" class="form-control form-control-lg" placeholder="Pérez" required />
                                             <label class="form-label" for="lastName">Apellido</label>
                                         </div>
+                                        <!-- Campo para el correo electrónico -->
                                         <div class="form-outline mb-4">
                                             <input type="email" id="email" class="form-control form-control-lg" placeholder="juan.perez@example.com" required />
                                             <label class="form-label" for="email">Correo Electrónico</label>
                                         </div>
+                                        <!-- Campo para la nueva contraseña (opcional) -->
                                         <div class="form-outline mb-4">
                                             <input type="password" id="password" class="form-control form-control-lg" placeholder="********" />
                                             <label class="form-label" for="password">Nueva Contraseña (opcional)</label>
                                         </div>
+                                        <!-- Campo para la dirección -->
                                         <div class="form-outline mb-4">
                                             <input type="text" id="address" class="form-control form-control-lg" placeholder="Avenida Siempre Viva 123" required />
                                             <label class="form-label" for="address">Dirección</label>
                                         </div>
+                                        <!-- Botones para limpiar y enviar el formulario -->
                                         <div class="d-flex justify-content-end pt-3">
                                             <button type="reset" class="btn btn-light btn-lg">Limpiar</button>
                                             <button type="submit" class="btn btn-primary btn-lg ms-2">Guardar Cambios</button>
@@ -59,10 +72,15 @@
             </div>
         </section>
     </main>
+
+    <!-- Inclusión del archivo de pie de página -->
     <div data-include="../partials/footer.html"></div>
+
+    <!-- Enlaces a los archivos JavaScript -->
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/include.js"></script>
-    <script src="../js/validations.js"></script>
+    <script src="../js/common.js"></script>
+    <script src="../js/profile-edit.js"></script>
 </body>
 
 </html>
