@@ -35,13 +35,16 @@ async function includeHTML() {
 
 // Ejecuta la función includeHTML una vez que el DOM está completamente cargado
 document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOM fully loaded. Starting includeHTML...");
     includeHTML();
 });
 
 // Nueva función para verificar el usuario logeado
 function checkLoggedInUser() {
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+    console.log("Checking logged in user...");
     if (loggedInUser) {
+        console.log("Logged in user: ", loggedInUser);
         const navLogin = document.getElementById('navLogin');
         const navRegister = document.getElementById('navRegister');
         const navUser = document.getElementById('navUser');
@@ -52,6 +55,7 @@ function checkLoggedInUser() {
             navRegister.classList.add('d-none');
             navUser.classList.remove('d-none');
             navUsername.textContent = loggedInUser.firstName;
+            console.log("Nav elements updated for logged in user.");
         } else {
             console.error('Nav elements not found');
         }

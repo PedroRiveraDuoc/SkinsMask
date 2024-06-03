@@ -46,6 +46,9 @@
                 <div class="col">
                     <h1>Bienvenidos a SkinsMask</h1>
                     <p>Descubre las mejores máscaras tradicionales japonesas.</p>
+                    <div>                    <!-- Botón de cerrar sesión para pruebas -->
+                        <button id="logoutButton" class="btn btn-danger mt-3">Cerrar Sesión</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -62,6 +65,37 @@
     <script src="js/login.js"></script>
     <script src="js/profile-edit.js"></script>
     <script src="js/logout.js"></script>
+    <script>
+        // Función para cerrar sesión al hacer clic en el botón de prueba
+        document.addEventListener("DOMContentLoaded", function() {
+            const logoutButton = document.getElementById('logoutButton');
+            if (logoutButton) {
+                logoutButton.addEventListener('click', function() {
+                    console.log("Logging out from test button...");
+                    localStorage.removeItem('loggedInUser');
+                    updateNavForLoggedOutUser(); // Asegura que la barra de navegación se actualice
+                    window.location.href = '../index.html';  // Redirigir a la página de inicio después de cerrar sesión
+                });
+            }
+        });
+
+        // Asegúrate de que esta función esté definida para actualizar la barra de navegación
+        function updateNavForLoggedOutUser() {
+            console.log("Updating nav for logged out user...");
+            const navLogin = document.getElementById('navLogin');
+            const navRegister = document.getElementById('navRegister');
+            const navUser = document.getElementById('navUser');
+
+            if (navLogin && navRegister && navUser) {
+                navLogin.classList.remove('d-none');
+                navRegister.classList.remove('d-none');
+                navUser.classList.add('d-none');
+                console.log("Nav updated to logged out state.");
+            } else {
+                console.error('Nav elements not found for updating.');
+            }
+        }
+    </script>
 </body>
 
 </html>
