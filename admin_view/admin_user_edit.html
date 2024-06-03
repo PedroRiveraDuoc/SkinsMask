@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkinsMask - Editar Usuario</title>
+    <!-- Enlaces a las hojas de estilo -->
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <!-- Inclusión del archivo de navegación -->
+    <div data-include="../partials/nav.html"></div>
+
+    <!-- Contenido Principal -->
+    <main class="flex-shrink-0 d-flex align-items-center justify-content-center min-vh-100">
+        <section class="container py-5" style="margin-top: 10vh;">
+            <h2>Editar Usuario</h2>
+            <form id="editUserForm">
+                <div class="mb-3">
+                    <label for="editFirstName" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" id="editFirstName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="editLastName" class="form-label">Apellido</label>
+                    <input type="text" class="form-control" id="editLastName" required>
+                </div>
+                <div class="mb-3">
+                    <label for="editEmail" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="editEmail" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Inclusión del archivo de pie de página -->
+    <div data-include="../partials/footer.html"></div>
+
+    <!-- Enlaces a los archivos JavaScript -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/include.js"></script>
+    <script src="../js/admin_user_edit.js"></script>
+</body>
+
+</html>
