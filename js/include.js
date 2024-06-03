@@ -59,5 +59,14 @@ function checkLoggedInUser() {
         } else {
             console.error('Nav elements not found');
         }
+
+        // Agregar manejador de eventos para el botón de cerrar sesión
+        const logoutBtn = document.getElementById('logoutBtn');
+        if (logoutBtn) {
+            logoutBtn.addEventListener('click', function () {
+                localStorage.removeItem('loggedInUser');
+                window.location.href = '../user_view/login.html';
+            });
+        }
     }
 }

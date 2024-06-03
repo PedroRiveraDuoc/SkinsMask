@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const cartCount = document.getElementById('cartCount');
     const cartSubtotal = document.getElementById('cartSubtotal');
     const cartTotal = document.getElementById('cartTotal');
+    const purchaseButton = document.querySelector('.purchase-btn'); // Botón de compra
 
     // Recuperar el usuario logueado
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
@@ -65,6 +66,34 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem('users', JSON.stringify(users));
             renderCart();
         }
+    }
+
+    function saveOrder() {
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const currentUser = users.find(user => user.email === loggedInUser.email);
+        if (!currentUser || !currentUser.cart) return;
+
+        const orders = JSON.parse(localStorage.getItem('orders')) || [];
+        const order = {
+            userId: currentUser.email,
+            userName: `${currentUser.firstname} ${currentUser.lastName}`,
+            userEmail: currentUser.email,
+            products: currentUser.cart,
+            total: currentUser.cart.reduce((total, item) => total + item.price * item.quantity, 0) + 4990
+        };
+
+        orders.push(order);
+        localStorage.setItem('orders', JSON.stringify(orders));
+
+        // Vaciar el carrito después de guardar la orden
+        currentUser.cart = [];
+        localStorage.setItem('users', JSON.stringify(users));
+        renderCart();
+    }
+
+    // Agregar evento de clic al botón de compra
+    if (purchaseButton) {
+        purchaseButton.addEventListener('click', saveOrder);
     }
 
     renderCart();

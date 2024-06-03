@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkinsMask - Órdenes de Compra</title>
+    <!-- Enlaces a las hojas de estilo -->
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body class="d-flex flex-column min-vh-100">
+    <!-- Inclusión del archivo de navegación -->
+    <div data-include="../partials/nav.html"></div>
+
+    <!-- Contenido Principal -->
+    <main class="flex-shrink-0 d-flex align-items-center justify-content-center min-vh-100">
+        <section class="container py-5" style="margin-top: 10vh;">
+            <h2 class="mb-4">Órdenes de Compra</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID Usuario</th>
+                        <th>Nombre Usuario</th>
+                        <th>Email</th>
+                        <th>Productos</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="ordersTableBody">
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- Inclusión del archivo de pie de página -->
+    <div data-include="../partials/footer.html"></div>
+
+    <!-- Enlaces a los archivos JavaScript -->
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/include.js"></script>
+    <script src="../js/admin_orders.js"></script>
+</body>
+
+</html>
