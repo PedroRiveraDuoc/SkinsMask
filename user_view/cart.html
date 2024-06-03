@@ -8,6 +8,7 @@
     <!-- Enlaces a las hojas de estilo -->
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/cart.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 
@@ -32,115 +33,15 @@
                                     <div class="d-flex justify-content-between align-items-center mb-4">
                                         <div>
                                             <p class="mb-1">Carrito de Compras</p>
-                                            <p class="mb-0">Tienes 4 productos en tu carrito</p>
+                                            <p class="mb-0">Tienes <span id="cartCount">0</span> productos en tu carrito</p>
                                         </div>
                                         <div>
                                             <p class="mb-0"><span class="text-muted">Ordenar por:</span> <a href="#!" class="text-body">precio <i class="fas fa-angle-down mt-1"></i></a></p>
                                         </div>
                                     </div>
 
-                                    <!-- Producto 1 -->
-                                    <div class="card mb-3">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <div class="d-flex flex-row align-items-center">
-                                                    <div>
-                                                        <img src="../img/post/black-gold-calligraphy.jpg" class="img-fluid rounded-3" alt="Black Gold Calligraphy" style="width: 65px;">
-                                                    </div>
-                                                    <div class="ms-3">
-                                                        <h5>Black Gold Calligraphy</h5>
-                                                        <p class="small mb-0">Descripción breve</p>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex flex-row align-items-center">
-                                                    <div style="width: 50px;">
-                                                        <h5 class="fw-normal mb-0">1</h5>
-                                                    </div>
-                                                    <div style="width: 85px;">
-                                                        <h5 class="mb-0">$149.990</h5>
-                                                    </div>
-                                                    <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Producto 2 -->
-                                    <div class="card mb-3">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <div class="d-flex flex-row align-items-center">
-                                                    <div>
-                                                        <img src="../img/post/black-half-mask.png" class="img-fluid rounded-3" alt="Black Half Mask" style="width: 65px;">
-                                                    </div>
-                                                    <div class="ms-3">
-                                                        <h5>Black Half Mask</h5>
-                                                        <p class="small mb-0">Descripción breve</p>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex flex-row align-items-center">
-                                                    <div style="width: 50px;">
-                                                        <h5 class="fw-normal mb-0">1</h5>
-                                                    </div>
-                                                    <div style="width: 80px;">
-                                                        <h5 class="mb-0">$59.990</h5>
-                                                    </div>
-                                                    <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Producto 3 -->
-                                    <div class="card mb-3">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <div class="d-flex flex-row align-items-center">
-                                                    <div>
-                                                        <img src="../img/post/blue-demon.png" class="img-fluid rounded-3" alt="Blue Demon" style="width: 65px;">
-                                                    </div>
-                                                    <div class="ms-3">
-                                                        <h5>Blue Demon</h5>
-                                                        <p class="small mb-0">Descripción breve</p>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex flex-row align-items-center">
-                                                    <div style="width: 50px;">
-                                                        <h5 class="fw-normal mb-0">1</h5>
-                                                    </div>
-                                                    <div style="width: 85px;">
-                                                        <h5 class="mb-0">$159.990</h5>
-                                                    </div>
-                                                    <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- Producto 4 -->
-                                    <div class="card mb-3 mb-lg-0">
-                                        <div class="card-body">
-                                            <div class="d-flex justify-content-between">
-                                                <div class="d-flex flex-row align-items-center">
-                                                    <div>
-                                                        <img src="../img/post/red-hannya.png" class="img-fluid rounded-3" alt="Red Hannya" style="width: 65px;">
-                                                    </div>
-                                                    <div class="ms-3">
-                                                        <h5>Red Hannya</h5>
-                                                        <p class="small mb-0">Descripción breve</p>
-                                                    </div>
-                                                </div>
-                                                <div class="d-flex flex-row align-items-center">
-                                                    <div style="width: 50px;">
-                                                        <h5 class="fw-normal mb-0">1</h5>
-                                                    </div>
-                                                    <div style="width: 85px;">
-                                                        <h5 class="mb-0">$139.990</h5>
-                                                    </div>
-                                                    <a href="#!" style="color: #cecece;"><i class="fas fa-trash-alt"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <!-- Contenedor para los productos del carrito -->
+                                    <div id="cartContainer">
                                     </div>
                                 </div>
 
@@ -190,7 +91,7 @@
 
                                             <div class="d-flex justify-content-between">
                                                 <p class="mb-2">Subtotal</p>
-                                                <p class="mb-2">$509.960</p>
+                                                <p class="mb-2" id="cartSubtotal">$0</p>
                                             </div>
 
                                             <div class="d-flex justify-content-between">
@@ -200,7 +101,7 @@
 
                                             <div class="d-flex justify-content-between mb-4">
                                                 <p class="mb-2">Total (Incl. Envío)</p>
-                                                <p class="mb-2"><strong>$514.950</strong></p>
+                                                <p class="mb-2" id="cartTotal"><strong>$4.990</strong></p>
                                             </div>
 
                                             <button type="button" class="btn btn-white btn-block btn-lg text-dark">
