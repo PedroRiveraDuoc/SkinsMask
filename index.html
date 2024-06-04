@@ -9,6 +9,32 @@
     <link rel="stylesheet" href="css/bootstrap.css" />
     <link rel="stylesheet" href="css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-top: 80.25%; /* Aspect ratio 16:9 */
+            overflow: hidden;
+        }
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .welcome-section {
+            margin-top: 50px;
+            color: #fff;
+        }
+
+        .welcome-text img {
+            max-width: 100%;
+        }
+    </style>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -16,7 +42,7 @@
     <div data-include="partials/nav.html"></div>
 
     <!-- Contenido principal -->
-    <main class="flex-shrink-0">
+    <main class="flex-shrink-0" style="background-color: rgb(26, 26, 26);">
         <!-- Carrusel de imágenes -->
         <div id="carouselExampleFade" class="carousel slide carousel-fade custom-size-carousel">
             <div class="carousel-inner">
@@ -41,19 +67,24 @@
         </div>
 
         <!-- Sección de bienvenida -->
-        <div class="container mt-5">
+        <div class="container welcome-section">
             <div class="row">
-                <div class="col">
-                    <h1>Bienvenidos a SkinsMask</h1>
-                    <p>Descubre las mejores máscaras tradicionales japonesas.</p>
-                    <div>                    <!-- Botón de cerrar sesión para pruebas -->
-                        <button id="logoutButton" class="btn btn-danger mt-3">Cerrar Sesión</button>
+                <div class="col-md-6 order-md-2 order-1">
+                    <div class="video-container">
+                        <video controls>
+                            <source src="video/bluehannya.mp4" type="video/mp4">
+                            Tu navegador no soporta la etiqueta de video.
+                        </video>
                     </div>
+                    <br><br>
+                </div>
+                <div class="col-md-6 order-md-1 order-2">
+                    <img src="img/bienvenida.png" class="img-fluid mb-5" alt="Bienvenida">
                 </div>
             </div>
         </div>
     </main>
-    
+
     <!-- Inclusión del pie de página -->
     <div data-include="partials/footer.html"></div>
 
@@ -74,7 +105,7 @@
                     console.log("Logging out from test button...");
                     localStorage.removeItem('loggedInUser');
                     updateNavForLoggedOutUser(); // Asegura que la barra de navegación se actualice
-                    window.location.href = '../index.html';  // Redirigir a la página de inicio después de cerrar sesión
+                    window.location.href = 'index.html';  // Redirigir a la página de inicio después de cerrar sesión
                 });
             }
         });

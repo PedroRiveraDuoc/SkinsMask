@@ -9,6 +9,27 @@
     <link rel="stylesheet" href="../css/bootstrap.css" />
     <link rel="stylesheet" href="../css/styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+        .admin-container {
+            max-width: 80%;
+            margin-top: 5vh;
+            background-color: #fff;
+            padding: 60px; /* Incrementar el padding para más espacio */
+            padding-bottom: 200px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .table {
+            margin-top: 20px;
+            width: 100%;
+        }
+        body {
+            background-color: #f8f9fa;
+        }
+        .spacer {
+            margin-bottom: 20vh; /* Ajustar este valor según sea necesario */
+        }
+    </style>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
@@ -17,9 +38,9 @@
 
     <!-- Contenido Principal -->
     <main class="flex-shrink-0 d-flex align-items-center justify-content-center min-vh-100">
-        <section class="container py-5" style="margin-top: 10vh;">
-            <h2>Administración de Usuarios</h2>
-            <table class="table table-striped mt-4">
+        <section class="admin-container container">
+            <h2 class="text-center mb-4">Administración de Usuarios</h2>
+            <table class="table table-striped">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -32,6 +53,7 @@
                     <!-- Aquí se llenará la tabla de usuarios -->
                 </tbody>
             </table>
+            <div class="spacer"></div> <!-- Añadir un espaciador -->
         </section>
     </main>
 
